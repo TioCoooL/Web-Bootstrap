@@ -49,19 +49,16 @@
         function opentab(evt, tabName) {
             var i, x, tablinks;
             
-            // Hide all elements with class="tab"
             x = document.getElementsByClassName("tab");
             for (i = 0; i < x.length; i++) {
                 x[i].style.display = "none";
             }
             
-            // Remove the red color from all tablinks
             tablinks = document.getElementsByClassName("tablink");
             for (i = 0; i < tablinks.length; i++) {
                 tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
             }
             
-            // Show the specific tab and add the red color to the button that opened it
             document.getElementById(tabName).style.display = "block";
             evt.currentTarget.className += " w3-red";
         }
