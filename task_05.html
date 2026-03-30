@@ -6,9 +6,11 @@
 
     <body>
         <div class="w3-container">
-        <p><b>Monthly Report 2023</b></p>
-            <table class="w3-table-all w3-blue">
-                <tr>
+            <p><b>Monthly Report 2023</b></p>
+            <input class="w3-input w3-border w3-padding" type="text" placeholder="Search for names..." id="myInput" onkeyup="myFunction()">
+            <br>
+            <table class="w3-table-all" id="myTable">
+                <tr class="w3-blue">
                     <b>
                     <th>No.</th>
                     <th>Merk</th>
@@ -40,8 +42,8 @@
 
                 <tr>
                     <td>4</td>
-                    <td>Land Rove
-                    <td>17</td>r</td>
+                    <td>Land Rove</td>
+                    <td>17</td>
                     <td>15</td>
                 </tr>
             </table>
@@ -49,22 +51,22 @@
 
         <script>
             function myFunction() {
-            var input, filter, table, tr, td, i;
-            input = document.getElementById("myInput");
-            filter = input.value.toUpperCase();
-            table = document.getElementById("myTable");
-            tr = table.getElementsByTagName("tr");
-            for (i = 0; i < tr.length; i++) {
-                td = tr[i].getElementsByTagName("td")[0];
-                if (td) {
-                txtValue = td.textContent || td.innerText;
-                if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                    tr[i].style.display = "";
-                } else {
-                    tr[i].style.display = "none";
+                var input, filter, table, tr, td, i;
+                input = document.getElementById("myInput");
+                filter = input.value.toUpperCase();
+                table = document.getElementById("myTable");
+                tr = table.getElementsByTagName("tr");
+                for (i = 0; i < tr.length; i++) {
+                    td = tr[i].getElementsByTagName("td")[1];
+                    if (td) {
+                        txtValue = td.textContent || td.innerText;
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                            tr[i].style.display = "";
+                        } else {
+                            tr[i].style.display = "none";
+                        }
+                    }
                 }
-                }
-            }
             }
         </script>
     </body>
