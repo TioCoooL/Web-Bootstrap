@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>W3.CSS Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+</head>
+<body>
+    <br>
+    <div class="w3-container w3-row">
+
+        <div class="w3-col m3 l3">
+            <div class="w3-card-4">
+                <img src="foto keren diri.jpg" style="width:100%">
+                <div class="w3-container w3-center">
+                    <p><b>Infinitio Vitacielo Jefferson</b></p>
+                    <p>IT Student</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="w3-rest w3-container">
+            
+            <div class="w3-bar w3-light-grey w3-border">
+                <button class="w3-bar-item w3-button tablink w3-red" onclick="opentab(event,'AboutMe')">About Me</button>
+                <button class="w3-bar-item w3-button tablink" onclick="opentab(event,'TechStack')">Tech Stack</button>
+                <button class="w3-bar-item w3-button tablink" onclick="opentab(event,'Experience')">Work Experience</button>
+            </div>
+            
+            <div id="AboutMe" class="w3-container w3-border w3-padding tab">
+                <h3>About Me</h3>
+                <p>Infinitio Vitacielo Jefferson is an IT Student. Duuuh</p>
+            </div>
+
+            <div id="TechStack" class="w3-container w3-border w3-padding tab" style="display:none">
+                <h3>Tech Stack</h3>
+                <p>Python, HTML, SQL, and Android Studio.</p>
+            </div>
+
+            <div id="Experience" class="w3-container w3-border w3-padding tab" style="display:none">
+                <h3>Work Experience</h3>
+                <p>Laundry Attendant at DM Laundry.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function opentab(evt, tabName) {
+            var i, x, tablinks;
+            
+            // Hide all elements with class="tab"
+            x = document.getElementsByClassName("tab");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            
+            // Remove the red color from all tablinks
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+            }
+            
+            // Show the specific tab and add the red color to the button that opened it
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " w3-red";
+        }
+    </script>
+</body>
+</html>
