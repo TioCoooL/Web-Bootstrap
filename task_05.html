@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <title>W3.CSS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+
+    <body>
+        <div class="w3-container">
+        <p><b>Monthly Report 2023</b></p>
+            <table class="w3-table-all w3-blue">
+                <tr>
+                    <b>
+                    <th>No.</th>
+                    <th>Merk</th>
+                    <th>In Stock</th>
+                    <th>Sold</th>
+                    </b>
+                </tr>
+
+                <tr>
+                    <td>1</td>
+                    <td>Volvo</td>
+                    <td>22</td>
+                    <td>18</td>
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <td>BMW</td>
+                    <td>15</td>
+                    <td>13</td>
+                </tr>
+
+                <tr>
+                    <td>3</td>
+                    <td>Saab</td>
+                    <td>5</td>
+                    <td>2</td>
+                </tr>
+
+                <tr>
+                    <td>4</td>
+                    <td>Land Rove
+                    <td>17</td>r</td>
+                    <td>15</td>
+                </tr>
+            </table>
+        </div>
+
+        <script>
+            function myFunction() {
+            var input, filter, table, tr, td, i;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+                }
+            }
+            }
+        </script>
+    </body>
+</html>
